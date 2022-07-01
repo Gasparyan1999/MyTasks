@@ -14,12 +14,20 @@ export default function Table({text}) {
   return (
     <table>
         <tbody>
- <tr className='place'>
-          <th  className='bank'>{text.bank}</th>
-          <th className='date'><p>{text.date}</p></th>
-          <th className='usd'><h2>USD</h2><div><p>{text.buy}</p><p>{text.sell}</p></div></th>
-          <th className='usd'><h2>EUR</h2><div><p>{text.buy}</p><p>{text.sell}</p></div></th>
-          <th className='usd'><h2>RUR</h2><div><p>{text.buy}</p><p>{text.sell}</p></div></th>
+ <tr className='head' >
+          <th className="name" colSpan={2} rowSpan={2}>{text.bank}</th>
+          <th className="name"  colSpan={2} rowSpan={2}><p>{text.date}</p></th>
+          <th colSpan={2} rowSpan={1} className='usd'><h2>USD</h2></th>
+          <th colSpan={2} rowSpan={1} className='usd'><h2>EUR</h2></th>      
+          <th colSpan={2} rowSpan={1} className='usd'><h2>RUR</h2></th>
+ </tr>
+ <tr  >
+          <th  className='text'  rowSpan={1} colSpan={1} ><p>{text.buy}</p></th>
+          <th className='text'  rowSpan={1} colSpan={1}><p>{text.sell}</p></th>
+          <th className='text' rowSpan={1} colSpan={1} ><p>{text.buy}</p></th>
+          <th className='text' rowSpan={1} colSpan={1}><p>{text.sell}</p></th>
+          <th className='text' rowSpan={1} colSpan={1} ><p>{text.buy}</p></th>
+          <th  className='text' rowSpan={1} colSpan={1}><p>{text.sell}</p></th>
  </tr>
  {
     bank.map((elem,index)=>{

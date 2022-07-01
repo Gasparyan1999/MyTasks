@@ -9,11 +9,14 @@ export default function Bank(props) {
     }
   return (
     <tr className='elem'>
-        <td className='bankName'>{props.name}</td>
-        <td className='date'>{date.toLocaleString("en",options)}</td>
-        <td className='price'><div><p>{props.usdOne}</p><p>{props.usdTwo}</p></div></td>
-        <td className='price'><div><p>{props.eurOne}</p><p>{props.eurTwo}</p></div></td>
-        <td className='price'><div><p>{props.rurOne}</p><p>{props.rurTwo}</p></div></td>
+        <td colSpan={2} rowSpan={1} className='bankName'>{props.name}</td>
+        <td   colSpan={2} rowSpan={1} className='date'>{date.toLocaleString("en",options)}</td>
+        <td colSpan={1} rowSpan={1}><p>{props.usdOne}</p></td>
+        <td colSpan={1} rowSpan={1}><p>{props.usdTwo}</p></td>
+        <td colSpan={1} rowSpan={1}><p>{props.eurOne}</p></td>
+        <td colSpan={1} rowSpan={1}><p>{props.eurTwo}</p></td>
+        <td colSpan={1} rowSpan={1}><p>{props.rurOne}</p></td>
+        <td colSpan={1} rowSpan={1}><p>{props.rurTwo}</p></td>
     </tr>
   )
 }

@@ -25,69 +25,31 @@
         transform: scale(1.1);
     }
     table{
-        width: 900px;
-        height: auto;
-        overflow: auto;
-        border-color: blue;
-        background-color: rgb(0, 255, 255);
-        color: black;
-        font-weight: 700;
-        tr:hover{
-           transform: scale(1.01);
-        }
-        .place{
-            width: 900px;
-            height: 80px;
-        .bank{
-            width: 150px;
-            height: 80px;
-            border: solid 2px black;
-        }
-        .date{
-             width: 150px;
-             height: 80px;
-             border: solid 2px black;
-             p{
-                width: 100px;
-                margin: 0 auto;
-             }
-        }
-        .usd{
-            width: 200px;
-            border:solid 2px black;
-            div{
-                width: 100%;
-                display: flex;
-                justify-content: space-around;
+        width: 1000px;
+        .head{
+            th{
+                background-color: aqua;
             }
+        .name{
+            width: 200px;
         }
     }
-    .elem{
-        width: 900px;
-        height: 40px;
-        .bankName{
-            width: 200px;
-            height: 40px;
-            text-align: center;
-            border: solid 2px black;
+        .text{
+            width: 100px;
+            background-color: aqua;
         }
-        .date{
-            width:100px;
-            height: 40px;
-            text-align: center;
-            border: solid 2px black;
+        th{
+            border: solid 1px black;
+            p{
+                width: 80%;
+                margin: 0 auto;
+            }
         }
-        .price{
-            height: 40px;
-            width: 200px;
-            border:solid 2px black;
-            div{
-                display: flex;
-                width: 200px;
-                height: 40px;
-                border: solid 1px grey;
-                justify-content: space-around;
-                align-items: center;
+        td{
+            border: solid 1px black;
+            text-align: center;
+            p{
+                width: 100%;
             }
         }
     }
@@ -130,4 +92,3 @@
 
         }
     }
-}
