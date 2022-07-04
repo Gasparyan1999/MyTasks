@@ -16,7 +16,8 @@ export default function Rate() {
         buy:"Buy",
         sell:"Sell",
         value:"Choose Currency",
-        name:"Choose a Bank"
+        name:"Choose a Bank",
+        col:"Foreign currency calculator"
     })
 
     const click=()=>{
@@ -26,7 +27,8 @@ export default function Rate() {
                 buy:"Առք",
                 sell:"Վաճառք",
                 value:"Ընտրեք արժույթը",
-                name:"Ընտրեք բանկ"
+                name:"Ընտրեք բանկ",
+                col:"Արտարժույթի հաշվիչ"
             })
         }
         const clickTwo=()=>{
@@ -36,7 +38,8 @@ export default function Rate() {
                 buy:"Buy",
                 sell:"Sell",
                 value:"Choose Currency",
-                name:"Choose a Bank"
+                name:"Choose a Bank",
+                col:"Foreign currency calculator"
             })
         }
         
@@ -44,12 +47,15 @@ export default function Rate() {
 
   return (
     <div className='main'>
-        <Table text={lang} />
-        <Calculate bank={bank} text={lang}/>
-        <div className='button'>
+          <div className='header'>
+            <h1>RATE.am</h1>
+            <div className='button'>
             <img onClick={click} src={armenia}/>
             <img onClick={clickTwo} src={english}/>
         </div>
+        </div>
+        <Table text={lang} />
+        <Calculate bank={bank} text={lang}/>
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
+import eur from "../Img/eur.png"
+import usa from "../Img/usa.png"
+import rur from "../Img/rus.png"
 
 export default function Calculate({bank,text}) {
      const [curr,setCurr]=useState("usdOne")
@@ -10,7 +13,8 @@ export default function Calculate({bank,text}) {
      const refOne=useRef(null)
      const refTwo=useRef(null)
      const name = useRef(null)
-
+     const [pic,setPic]=useState(usa)
+     const [picTwo,setPicTwo]=useState(eur)
     const change=(e)=>{
         let x=0
         let y=0
@@ -55,6 +59,15 @@ export default function Calculate({bank,text}) {
         else{
             setTwo((refOne.current.value)*x/y)
         }
+        if(currOne.current.value=="eurOne"){
+            setPic(eur)
+        }
+        else if(currOne.current.value=="usdOne"){
+             setPic(usa)
+        }
+        else{
+            setPic(rur)
+        }
        
 
     }
@@ -79,6 +92,15 @@ export default function Calculate({bank,text}) {
         }
         else{
             setTwo((refOne.current.value)*x/y)
+        }
+        if(currTwo.current.value=="eurTwo"){
+            setPicTwo(eur)
+        }
+        else if(currTwo.current.value=="usdTwo"){
+             setPicTwo(usa)
+        }
+        else{
+            setPicTwo(rur)
         }
     }
     const changeOne=(e)=>{
@@ -131,6 +153,9 @@ export default function Calculate({bank,text}) {
 
   return (
     <div className='calc'>
+        <div className='colspan'>
+            <h2>{text.col}</h2>
+        </div>
         <div className='one' >
        <label htmlFor="banks">{text.name}:</label  >
     <select name="banks" id="banks" onChange={change} ref={name} >
@@ -142,7 +167,7 @@ export default function Calculate({bank,text}) {
    </div>
    <div className='curr'>
     <span className='spanOne'>
-   <label htmlFor="Currency">{text.value}:
+   <label htmlFor="Currency"><img src={pic} />:
    <select name="currency" id="currency" defaultValue="usdOne" ref={currOne} onChange={changeA} >
          <option value="usdOne">USD</option>
          <option value="eurOne">EUR</option>
@@ -152,7 +177,7 @@ export default function Calculate({bank,text}) {
     <input type="number" value={one} ref={refOne} onChange={changeOne}/>
    </span>
    <span>
-   <label htmlFor="Currency">{text.value}:
+   <label className='label' htmlFor="Currency"><img src={picTwo} />:
    <select name="currency" id="currency" defaultValue="eurTwo" ref={currTwo} onChange={changeB} >
          <option value="usdTwo">USD</option>
          <option   value="eurTwo">EUR</option>
